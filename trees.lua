@@ -51,7 +51,7 @@ function fell()
     ups = 0
     while (turtle.detectUp()) do
         _, block = turtle.inspectUp()
-        if (block.name != "minecraft:log") then
+        if (block.name ~= "minecraft:log") then
             break
         end
         turtle.digUp()
