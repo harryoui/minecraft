@@ -11,7 +11,7 @@ currentTree = 0
 fuelOnStart = 0
 
 function refuel_if_needed()
-    if (turtle.getFuelLevel() < 80) then
+    if (turtle.getFuelLevel() < 5) then
         print("Refueling " .. turtle.getFuelLevel() .. "/80")
         turtle.select(1)
         turtle.refuel(1)
