@@ -21,7 +21,7 @@ end
 function is_front_wood()
     local success, block = turtle.inspect()
     if success then
-        return string.find(block.name, "minecraft:log")
+        return string.find(block.name, "minecraft:log") or string.find(block.name, "minecraft:leaves") 
     end
     return false
 end
@@ -53,7 +53,6 @@ function plant()
 end
 
 function back()
-    turtle.back()
     turtle.turnLeft()
     turtle.turnLeft()
     forward()
