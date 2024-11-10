@@ -170,7 +170,12 @@ function main()
         end
     end
 
-    gotoStart()
+    print("Returning to start")
+    forward()
+    turtle.turnRight()
+    forward(1 * (FIELD_Y - 1))
+    turtle.turnRight()
+    
     emptyInventory()
 
     fuel = turtle.getFuelLevel()
