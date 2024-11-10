@@ -30,6 +30,17 @@ function forward(count)
     end
 end
 
+function plant()
+    local item = turtle.getItemDetail(2)  -- Get the item details in slot 2
+    if item and string.find(item.name, "sapling") then  -- Check if item exists and contains "sapling" in the name
+        turtle.select(2)
+        turtle.placeDown()
+    else
+        print("Slot 2 does not contain a sapling.")
+        -- TODO: We should return home from here!
+    end
+end
+
 function fell()
     -- Chop down the tree directly infront of the turtle
     -- Then return to the original place
