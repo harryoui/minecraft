@@ -1,7 +1,7 @@
 -- Field Size X (front)
-FIELD_X = 16
+FIELD_X = 8
 -- Field Size Y (right) EVEN VALUES ONLY
-FIELD_Y = 16
+FIELD_Y = 8
 
 -- How long to sleep between Harvesting
 SLEEP_TIME = 300 -- 5 minutes
