@@ -18,13 +18,21 @@ function refuel_if_needed()
     end
 end
 
+function is_front_wood()
+    local success, block = turtle.inspect()
+    if success then
+        return string.find(block.name, "minecraft:log")
+    end
+    return false
+end
+
 function forward(count)
     if count == nil then
         count = 1
     end
     for i = 1, count, 1 do
         turtle.select(3)
-        if (turtle.detect()) then
+        if (is_front_wood()) then
             turtle.dig()
         end
 
@@ -56,7 +64,9 @@ end
 function fell()
     -- Chop down the tree directly infront of the turtle
     -- Then return to the original place
-    turtle.dig()
+    if (is_front_wood()) then
+        turtle.dig()
+    end
     refuel_if_needed()
     turtle.forward()
     turtle.digDown()
