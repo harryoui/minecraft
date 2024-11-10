@@ -44,6 +44,15 @@ function plant()
     end
 end
 
+function back()
+    turtle.back()
+    turtle.turnLeft()
+    turtle.turnLeft()
+    forward()
+    turtle.turnLeft()
+    turtle.turnLeft()
+end
+
 function fell()
     -- Chop down the tree directly infront of the turtle
     -- Then return to the original place
@@ -64,11 +73,13 @@ function fell()
     end
     for i = ups, 1, -1 do
         refuel_if_needed()
-        turtle.digDown() -- Incase a tree grew
+        if (turtle.detectDown()) then
+            turtle.digDown() -- Incase a tree grew
+        end
         turtle.down()
     end
     refuel_if_needed()
-    turtle.back()
+    back()
     print("Harvested " .. (ups + 2) .. " logs")
 end
 
