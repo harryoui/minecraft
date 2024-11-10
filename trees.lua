@@ -4,7 +4,7 @@ FIELD_X = 8
 FIELD_Y = 8
 
 -- How long to sleep between Harvesting
-SLEEP_TIME = 300 -- 5 minutes
+SLEEP_TIME = 60 -- 1 Minute
 
 -- Instance variables
 currentTree = 0
