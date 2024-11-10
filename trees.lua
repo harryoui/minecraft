@@ -64,6 +64,7 @@ function fell()
     end
     for i = ups, 1, -1 do
         refuel_if_needed()
+        turtle.digDown() -- Incase a tree grew
         turtle.down()
     end
     refuel_if_needed()
