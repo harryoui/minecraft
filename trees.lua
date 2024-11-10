@@ -52,14 +52,6 @@ function plant()
     end
 end
 
-function back()
-    turtle.turnLeft()
-    turtle.turnLeft()
-    forward()
-    turtle.turnLeft()
-    turtle.turnLeft()
-end
-
 function fell()
     -- Chop down the tree directly infront of the turtle
     -- Then return to the original place
@@ -88,7 +80,6 @@ function fell()
         turtle.down()
     end
     refuel_if_needed()
-    --back()
     print("Harvested " .. (ups + 2) .. " logs")
 end
 
@@ -177,6 +168,14 @@ function restockInventory()
     turtle.turnRight()
 end
 
+function return_to_start()
+    print("Returning to start")
+    forward()
+    turtle.turnRight()
+    forward(1 * (FIELD_Y - 1))
+    turtle.turnRight()
+end
+
 function main()
     emptyInventory()
     restockInventory()
@@ -192,12 +191,7 @@ function main()
         end
     end
 
-    print("Returning to start")
-    forward()
-    turtle.turnRight()
-    forward(1 * (FIELD_Y - 1))
-    turtle.turnRight()
-    
+    return_to_start()    
     emptyInventory()
 
     fuel = turtle.getFuelLevel()
