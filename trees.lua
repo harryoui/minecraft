@@ -19,6 +19,9 @@ function refuel_if_needed()
 end
 
 function forward(count)
+    if count == nil then
+        count = 1
+    end
     for i = 1, count, 1 do
         turtle.select(3)
         if (turtle.detect()) then
