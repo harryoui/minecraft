@@ -103,13 +103,13 @@ end
 function moveRow(y)
     evenRow = math.fmod(y, 2) == 0
     print("Switching Rows")
-    forward(SPACE)
+    forward()
     if (evenRow) then
         turtle.turnLeft()
     else
         turtle.turnRight()
     end
-    forward(SPACE)
+    forward()
     if (evenRow) then
         turtle.turnLeft()
     else
