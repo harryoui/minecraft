@@ -88,7 +88,7 @@ function fell()
         turtle.down()
     end
     refuel_if_needed()
-    back()
+    --back()
     print("Harvested " .. (ups + 2) .. " logs")
 end
 
@@ -96,12 +96,13 @@ function move()
 
     -- Check if there is a tree in front of the turtle
     if (turtle.detect()) then
+        -- Move forward and fell the tree
         print("Tree " .. currentTree .. " exists. Harvesting...")
         fell()
+    else
+        -- Move the turtle forward
+        turtle.forward()
     end
-
-    -- Move the turtle forward
-    turtle.forward()
 
     -- Check the new block beneath us and perform action
     local success, block = turtle.inspectDown()  -- Inspect the block below the turtle
